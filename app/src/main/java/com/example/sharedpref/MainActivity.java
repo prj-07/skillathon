@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void SaveData(View view) {
+    public void SaveData(View view) {
 
         String namestr = name.getText().toString();
         String phonestr =phone.getText().toString();
@@ -49,10 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
         editor.putString("name",namestr);
         editor.putString("phone",phonestr);
+        editor.apply();
         Toast.makeText(this, "Data has been saved", Toast.LENGTH_SHORT).show();
     }
 
-    private void DisplayData(View view  ) {
+    public void DisplayData(View view  ) {
         startActivity(new Intent(MainActivity.this,DisplayActivity.class));
     }
 
