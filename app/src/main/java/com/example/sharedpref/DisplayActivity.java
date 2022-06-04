@@ -9,16 +9,17 @@ import android.widget.TextView;
 
 public class DisplayActivity extends AppCompatActivity {
 
-    TextView name,phone;
+    TextView name, phone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
-    name  = findViewById(R.id.textView4);
-    phone = findViewById(R.id.textView5);
+        name = findViewById(R.id.name);
+        phone = findViewById(R.id.phone);
         SharedPreferences sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE);
-        name.setText(sharedPreferences.getString("name",""));
-        phone.setText(sharedPreferences.getString("phone",""));
+        name.setText("Hello "+sharedPreferences.getString("name", "")+"!");
+        phone.setText("Your Number is "+sharedPreferences.getString("phone", ""));
 
     }
 }
